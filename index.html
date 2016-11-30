@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script defer="defer" src="js/demoLib/cssAccessor.js"></script>
+    <script defer="defer" src="js/demoLib/jsonCallbackManager.js"></script>
+    <script defer="defer" src="js/demoLib/simplePager.js"></script>
+    <script defer="defer" src="js/demoLib/twitchDataProvider.js"></script>
+    <script defer="defer" src="js/demoLib/serviceContainer.js"></script>
+    <script defer="defer" src="js/demo/searchResultRenderer.js"></script>
+    <script defer="defer" src="js/demo/application.js"></script>
+    <script defer="defer" src="js/demo/view.js"></script>
+    <script defer="defer" src="js/applicationAutoload.js"></script>
+</head>
+<body>
+<section id="search">
+    <form id="search-form">
+        <input id="search-query" name="query" title="search query" type="text"/>
+        <button id="search-submit" name="search-action">Search</button>
+    </form>
+</section>
+<main>
+    <section id="search-results">
+
+    </section>
+    <section id="message">
+        Please enter a search query...
+    </section>
+    <section id="info-bar">
+        <section id="result-total">
+            Total Results: <span id="result-total-count">0</span>
+        </section>
+        <section id="top-counter" class="pager">
+            <button id="top-counter.previous-page">&lt;</button>
+            <div id="top-counter.page-count">0/0</div>
+            <button id="top-counter.next-page">&gt;</button>
+        </section>
+    </section>
+</main>
+<div id="templates">
+    <div id="template.search-result">
+        <section class="template search-result-entry">
+            <div class="stream-info">
+                <h1><a href="#" class="stream-title"></a></h1>
+                <h2 class="game-info">
+                    <span class="game-title"></span>
+                    <span class="game-info-separator">-</span>
+                    <span class="viewers"></span>
+                </h2>
+                <div class="description"></div>
+            </div>
+            <div class="preview-image"><img src=""/></div>
+        </section>
+    </div>
+    <div id="template.search-result.empty">
+        <section class="search-result-set">
+            <h1>No matching entries</h1>
+            <div class="description">
+                There are no results matching your search query.
+            </div>
+        </section>
+    </div>
+    <div id="template.search-result.error">
+        <section class="search-result-set">
+            <h1>Processing Error</h1>
+            <div class="description">
+                There was an error processing your search request.
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>
